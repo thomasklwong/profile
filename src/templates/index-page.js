@@ -45,8 +45,9 @@ const IndexPage = ({
       frontmatter: { title, heading, subheading, description },
     },
   },
+  location,
 }) => (
-  <Layout>
+  <Layout location={location}>
     <IndexPageTemplate
       title={title}
       heading={heading}
