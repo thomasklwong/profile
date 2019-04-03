@@ -1,7 +1,13 @@
 import React from "react"
+import Sidebar from "../Sidebar"
 
-const Layout = ({ children }) => {
-  return <main>{children}</main>
+const Layout = ({ children, location }) => {
+  return (
+    <React.Fragment>
+      <Sidebar location={location} />
+      <main>{children}</main>
+    </React.Fragment>
+  )
 }
 
 export default Layout
