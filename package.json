@@ -13,7 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "gatsby": "^2.2.13",
+    "gatsby": "^2.3.14",
     "gatsby-image": "^2.0.37",
     "gatsby-plugin-netlify-cms": "^3.0.17",
     "gatsby-plugin-robots-txt": "^1.4.0",
@@ -22,9 +22,9 @@
     "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.17",
     "kebab-case": "^1.0.0",
-    "netlify-cms": "^2.8.0",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "netlify-cms": "^2.9.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "prettier": "^1.16.4"
