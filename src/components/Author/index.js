@@ -1,32 +1,13 @@
 import React from "react"
-import { Link, StaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
-
-const query = graphql`
-  query AuthorQuery {
-    site {
-      siteMetadata {
-        author {
-          name
-        }
-      }
-    }
-    file(relativePath: { eq: "Thomas-Wong.jpg" }) {
-      childImageSharp {
-        fixed(width: 75, height: 75) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`
 
 const Author = ({ location: { pathname } = {} }) => {
   const isRootPage = pathname === "/"
   // eslint-disable-next-line  jsx-a11y/heading-has-content
   const Heading = props => (isRootPage ? <h1 {...props} /> : <h2 {...props} />)
 
-  const render = ({
+  const {
     site: {
       siteMetadata: {
         author: { name },
@@ -35,7 +16,26 @@ const Author = ({ location: { pathname } = {} }) => {
     file: {
       childImageSharp: { fixed },
     },
-  }) => (
+  } = useStaticQuery(graphql`
+    query AuthorQuery {
+      site {
+        siteMetadata {
+          author {
+            name
+          }
+        }
+      }
+      file(relativePath: { eq: "Thomas-Wong.jpg" }) {
+        childImageSharp {
+          fixed(width: 75, height: 75) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+
+  return (
     <div>
       <Link to="/">
         <Img
@@ -50,8 +50,6 @@ const Author = ({ location: { pathname } = {} }) => {
       </Heading>
     </div>
   )
-
-  return <StaticQuery query={query} render={render} />
 }
 
 export default Author
