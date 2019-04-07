@@ -2,10 +2,9 @@ module.exports = {
   siteMetadata: {
     author: {
       name: "Thomas Wong",
-      email: "#",
-      github: "#",
-      twitter: "#",
-      rss: "#",
+      email: "thomasklwong@gmail.com",
+      linkedin: "thomasklwong",
+      github: "thomasklwong",
     },
     siteUrl: "https://confident-nightingale-cbc8f5.netlify.com",
   },
