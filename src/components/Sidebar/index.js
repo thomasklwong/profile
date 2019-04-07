@@ -1,8 +1,8 @@
 import React from "react"
 import Author from "../Author"
+import Nav from "../Nav"
+import ExternalLinks from "../ExternalLinks"
 
-const Nav = () => <nav />
-const Contact = () => <p />
 const Copyright = () => <small>{"© All rights reserved."}</small>
 
 const Sidebar = ({ location }) => {
@@ -10,7 +10,7 @@ const Sidebar = ({ location }) => {
     <aside>
       <Author location={location} />
       <Nav />
-      <Contact />
+      <ExternalLinks />
       <Copyright />
     </aside>
   )
