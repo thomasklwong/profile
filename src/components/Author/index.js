@@ -8,10 +8,6 @@ const query = graphql`
       siteMetadata {
         author {
           name
-          email
-          github
-          twitter
-          rss
         }
       }
     }
@@ -33,7 +29,7 @@ const Author = ({ location: { pathname } = {} }) => {
   const render = ({
     site: {
       siteMetadata: {
-        author: { name, email, github, twitter, rss },
+        author: { name },
       },
     },
     file: {
