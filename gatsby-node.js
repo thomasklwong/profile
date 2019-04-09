@@ -1,6 +1,5 @@
 const path = require("path")
 const { createFilePath } = require("gatsby-source-filesystem")
-const kebabCase = require("kebab-case")
 
 const queryAllMarkdownDoc = `
   query {
