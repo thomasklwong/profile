@@ -10,6 +10,8 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
@@ -21,12 +23,13 @@
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.17",
-    "kebab-case": "^1.0.0",
     "netlify-cms": "^2.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-react-app": "^3.0.8",
     "prettier": "^1.16.4"
   },
   "repository": {
