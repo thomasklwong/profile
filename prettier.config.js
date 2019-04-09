@@ -1,7 +1,4 @@
-{
-  "endOfLine": "lf",
-  "semi": false,
-  "singleQuote": false,
-  "tabWidth": 2,
-  "trailingComma": "es5"
-}
+module.exports = {
+  endOfLine: 'lf',
+  singleQuote: true
+};
