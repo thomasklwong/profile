@@ -1,5 +1,5 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link } from 'gatsby';
 
 const Nav = () => {
   return (
@@ -16,7 +16,7 @@ const Nav = () => {
         </li>
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

@@ -1,5 +1,6 @@
-import React from "react"
-import Sidebar from "../Sidebar"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Sidebar from '../Sidebar';
 
 const Layout = ({ children, location }) => {
   return (
@@ -7,7 +8,12 @@ const Layout = ({ children, location }) => {
       <Sidebar location={location} />
       <main>{children}</main>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Layout
+Layout.propTypes = {
+  children: PropTypes.element.isRequired,
+  location: PropTypes.object.isRequired
+};
+
+export default Layout;

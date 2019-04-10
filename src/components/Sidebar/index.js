@@ -1,9 +1,10 @@
-import React from "react"
-import Author from "../Author"
-import Nav from "../Nav"
-import ExternalLinks from "../ExternalLinks"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Author from '../Author';
+import Nav from '../Nav';
+import ExternalLinks from '../ExternalLinks';
 
-const Copyright = () => <small>{"© All rights reserved."}</small>
+const Copyright = () => <small>{'© All rights reserved.'}</small>;
 
 const Sidebar = ({ location }) => {
   return (
@@ -13,7 +14,11 @@ const Sidebar = ({ location }) => {
       <ExternalLinks />
       <Copyright />
     </aside>
-  )
-}
+  );
+};
 
-export default Sidebar
+Sidebar.propTypes = {
+  location: PropTypes.object.isRequired
+};
+
+export default Sidebar;

@@ -1,21 +1,22 @@
-import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image/withIEPolyfill"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image/withIEPolyfill';
 
 const Author = ({ location: { pathname } = {} }) => {
-  const isRootPage = pathname === "/"
+  const isRootPage = pathname === '/';
   // eslint-disable-next-line  jsx-a11y/heading-has-content
-  const Heading = props => (isRootPage ? <h1 {...props} /> : <h2 {...props} />)
+  const Heading = props => (isRootPage ? <h1 {...props} /> : <h2 {...props} />);
 
   const {
     site: {
       siteMetadata: {
-        author: { name },
-      },
+        author: { name }
+      }
     },
     file: {
-      childImageSharp: { fixed },
-    },
+      childImageSharp: { fixed }
+    }
   } = useStaticQuery(graphql`
     query AuthorQuery {
       site {
@@ -33,14 +34,14 @@ const Author = ({ location: { pathname } = {} }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <div>
       <Link to="/">
         <Img
-          fixed={fixed}
           alt={name}
+          fixed={fixed}
           objectFit="cover"
           objectPosition="50% 50%"
         />
@@ -49,7 +50,13 @@ const Author = ({ location: { pathname } = {} }) => {
         <Link to="/">{name}</Link>
       </Heading>
     </div>
-  )
-}
+  );
+};
 
-export default Author
+Author.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string
+  })
+};
+
+export default Author;

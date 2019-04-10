@@ -1,7 +1,7 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { graphql } from "gatsby"
-import Layout from "../components/Layout"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
 
 // NOTE: Using multiple `export const` as Gatsby has issue with
 // grouping multiple export
@@ -17,12 +17,12 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 export const IndexPageTemplate = ({
   title,
   heading,
   subheading,
-  description,
+  description
 }) => (
   <article>
     <h1>title</h1>
@@ -30,41 +30,42 @@ export const IndexPageTemplate = ({
     <h3>subheading</h3>
     <p>description</p>
   </article>
-)
+);
 
 IndexPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   heading: PropTypes.string.isRequired,
   subheading: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-}
+  title: PropTypes.string.isRequired
+};
 
 const IndexPage = ({
   data: {
     markdownRemark: {
-      frontmatter: { title, heading, subheading, description },
-    },
+      frontmatter: { title, heading, subheading, description }
+    }
   },
-  location,
+  location
 }) => (
   <Layout location={location}>
     <IndexPageTemplate
-      title={title}
+      description={description}
       heading={heading}
       subheading={subheading}
-      description={description}
+      title={title}
     />
   </Layout>
-)
+);
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.shape({
-        ...IndexPageTemplate.propTypes,
-      }),
-    }),
+        ...IndexPageTemplate.propTypes
+      })
+    })
   }),
-}
+  location: PropTypes.object.isRequired
+};
 
-export default IndexPage
+export default IndexPage;

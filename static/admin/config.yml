@@ -11,20 +11,20 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    label_singular: "Page"
-    description: "Individual page collections"
+  - name: 'pages'
+    label: 'Pages'
+    label_singular: 'Page'
+    description: 'Individual page collections'
     files:
-      - file: "src/pages/index.md"
-        label: "Landing Page"
-        name: "index"
+      - file: 'src/pages/index.md'
+        label: 'Landing Page'
+        name: 'index'
         fields:
           - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "index-page",
+              label: 'Template Key',
+              name: 'templateKey',
+              widget: 'hidden',
+              default: 'index-page',
             }
           - { label: Title, name: title, widget: string }
           - { label: Heading, name: heading, widget: string }

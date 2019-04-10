@@ -1,5 +1,5 @@
 ---
-templateKey: "index-page"
+templateKey: 'index-page'
 title: Thomas Wong
 heading: foo
 subheading: bar
