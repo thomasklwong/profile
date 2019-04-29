@@ -18,6 +18,7 @@ export const query = graphql`
     }
   }
 `;
+
 export const IndexPageTemplate = ({
   title,
   heading,
