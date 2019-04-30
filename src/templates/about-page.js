@@ -50,6 +50,7 @@ const AboutPage = ({
     />
   </Layout>
 );
+
 AboutPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
