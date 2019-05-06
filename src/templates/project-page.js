@@ -3,6 +3,7 @@ import PropTypes, { shape } from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import camelcase from 'camelcase';
 import decamelize from 'decamelize';
+import { Helmet } from 'react-helmet';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
@@ -33,7 +34,7 @@ export const ProjectPageTemplate = ({
   helmet
 }) => (
   <article>
-    <helmet />
+    {helmet}
     <h1>{title}</h1>
     <p>{date}</p>
     <p>{description}</p>
@@ -77,7 +78,12 @@ const ProjectPage = ({
       contentComponent={HTMLContent}
       date={date}
       description={description}
-      helmet={() => {}}
+      helmet={
+        <Helmet>
+          <title>{title}</title>
+          <meta content={description} name="description" />
+        </Helmet>
+      }
       tags={tags}
       title={title}
     />

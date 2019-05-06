@@ -27,7 +27,8 @@
     "gatsby-transformer-sharp": "^2.1.17",
     "netlify-cms": "^2.9.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-helmet": "^6.0.0-beta"
   },
   "devDependencies": {
     "@babel/plugin-proposal-optional-chaining": "^7.2.0",
