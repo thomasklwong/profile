@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby';
 import camelcase from 'camelcase';
 import decamelize from 'decamelize';
 import Layout from '../components/Layout';
+import Content, { HTMLContent } from '../components/Content';
 
 const kebabcase = str => decamelize(camelcase(str), '-');
 
@@ -24,7 +25,7 @@ export const query = graphql`
 
 export const ProjectPageTemplate = ({
   content,
-  contentComponent,
+  contentComponent: PageContent = Content,
   date,
   description,
   tags,
@@ -36,7 +37,7 @@ export const ProjectPageTemplate = ({
     <h1>{title}</h1>
     <p>{date}</p>
     <p>{description}</p>
-    <contentComponent>{content}</contentComponent>
+    <PageContent content={content} />
     {tags?.length ? (
       <section>
         <h4>Tags</h4>
@@ -73,7 +74,7 @@ const ProjectPage = ({
   <Layout>
     <ProjectPageTemplate
       content={html}
-      contentComponent={() => {}}
+      contentComponent={HTMLContent}
       date={date}
       description={description}
       helmet={() => {}}
