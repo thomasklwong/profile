@@ -91,8 +91,16 @@ const ProjectPage = ({
 );
 
 ProjectPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({})
+  data: shape({
+    markdownRemark: shape({
+      html: PropTypes.node.isRequired,
+      frontmatter: shape({
+        title: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        tags: PropTypes.array
+      })
+    })
   })
 };
 
