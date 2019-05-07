@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes, { shape } from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
+import kebabcase from '../../utils/kebab-case';
 import Layout from '../../components/Layout';
 
 export const query = graphql`
@@ -35,7 +36,7 @@ const TagsPage = ({
       <ul>
         {group
           .map(({ fieldValue, totalCount }) => ({
-            path: `${fieldValue}`,
+            path: `${kebabcase(fieldValue)}`,
             text: `${fieldValue} (${totalCount})`
           }))
           .map(({ path, text }) => (

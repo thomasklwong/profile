@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes, { shape } from 'prop-types';
 import { graphql, Link } from 'gatsby';
-import camelcase from 'camelcase';
-import decamelize from 'decamelize';
 import { Helmet } from 'react-helmet';
+import kebabcase from '../utils/kebab-case';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
-
-const kebabcase = str => decamelize(camelcase(str), '-');
 
 export const query = graphql`
   query ProjectPage($id: String!) {
