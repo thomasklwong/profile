@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    title: 'Something',
     author: {
       name: 'Thomas Wong',
       email: 'thomasklwong@gmail.com',
