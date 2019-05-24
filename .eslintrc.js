@@ -11,7 +11,7 @@ module.exports = {
     'prettier/react'
   ],
 
-  plugins: ['react-hooks'],
+  plugins: ['react-hooks', 'emotion'],
 
   globals: {
     graphql: true,
@@ -88,6 +88,8 @@ module.exports = {
     'react/jsx-sort-props': 2,
 
     'react-hooks/rules-of-hooks': 2,
-    'react-hooks/exhaustive-deps': 2
+    'react-hooks/exhaustive-deps': 2,
+
+    'emotion/jsx-import': 2
   }
 };
