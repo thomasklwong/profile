@@ -3,20 +3,6 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import tw from 'tailwind.macro';
 
-const StyledBody = styled.body`
-  ${tw`m-0 font-sans text-gray-800 leading-relaxed`};
-  text-size-adjust: 100%;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  [type='button'],
-  [type='reset'],
-  [type='submit'],
-  button {
-    appearance: button;
-  }
-`;
-
 const StyledBodyDiv = styled.div`
   & > div {
     ${tw`flex max-w-5xl mx-auto`}
@@ -42,7 +28,8 @@ const HTML = ({
       />
       {headComponents}
     </head>
-    <StyledBody {...bodyAttributes}>
+
+    <body {...bodyAttributes}>
       {preBodyComponents}
 
       <noscript id="gatsby-noscript" key="noscript">
@@ -56,7 +43,7 @@ const HTML = ({
         key={`body`}
       />
       {postBodyComponents}
-    </StyledBody>
+    </body>
   </html>
 );
 

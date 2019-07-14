@@ -10,6 +10,7 @@ module.exports = {
     siteUrl: 'https://confident-nightingale-cbc8f5.netlify.com'
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     'gatsby-plugin-emotion',
     {
       resolve: `gatsby-source-filesystem`,
