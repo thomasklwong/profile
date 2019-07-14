@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image/withIEPolyfill';
+import { ClassNames } from '@emotion/core';
+import tw from 'tailwind.macro';
 
 const Author = ({ location: { pathname } = {} }) => {
   const isRootPage = pathname === '/';
@@ -39,12 +41,19 @@ const Author = ({ location: { pathname } = {} }) => {
   return (
     <div>
       <Link to="/">
-        <Img
-          alt={name}
-          fixed={fixed}
-          objectFit="cover"
-          objectPosition="50% 50%"
-        />
+        <ClassNames>
+          {({ css, cx }) => (
+            <Img
+              alt={name}
+              className={css`
+                ${tw`rounded-full`}
+              `}
+              fadeIn={false}
+              fixed={fixed}
+              title={name}
+            />
+          )}
+        </ClassNames>
       </Link>
       <Heading>
         <Link to="/">{name}</Link>
