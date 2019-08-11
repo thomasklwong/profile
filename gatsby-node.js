@@ -90,7 +90,16 @@ const onCreateNode = ({ node, actions: { createNodeField }, getNode }) => {
   });
 };
 
+const onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    node: {
+      fs: 'empty'
+    }
+  });
+};
+
 module.exports = {
   createPages,
-  onCreateNode
+  onCreateNode,
+  onCreateWebpackConfig
 };
