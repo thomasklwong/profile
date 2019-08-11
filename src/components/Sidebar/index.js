@@ -6,7 +6,7 @@ import Author from '../Author';
 import Nav from '../Nav';
 import ExternalLinks from '../ExternalLinks';
 
-const Aside = tw.aside`w-full p-5 md:w-2/5 lg:w-1/3 md:mr-6`;
+const Aside = tw.aside`w-full p-5 md:w-1/5 md:mr-6`;
 const Copyright = () => <small>{'© All rights reserved.'}</small>;
 
 const Sidebar = ({ location }) => {
