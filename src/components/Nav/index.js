@@ -1,12 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import styled from '@emotion/styled';
 import tw from 'tailwind.macro';
 
-const StyledLi = styled.li`
-  ${tw`my-3`}
-`;
-
+const StyledLi = tw.li`my-3`;
 const Nav = () => {
   return (
     <nav>
