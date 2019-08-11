@@ -7,7 +7,8 @@ import Nav from '../Nav';
 import ExternalLinks from '../ExternalLinks';
 
 const Aside = tw.aside`w-full p-5 md:w-1/5 md:mr-6`;
-const Copyright = () => <small>{'© All rights reserved.'}</small>;
+const StyledSmall = tw.small`block mt-10 text-gray-500`;
+const Copyright = () => <StyledSmall>{'© All rights reserved.'}</StyledSmall>;
 
 const Sidebar = ({ location }) => {
   return (
