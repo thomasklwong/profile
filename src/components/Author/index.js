@@ -3,12 +3,19 @@ import PropTypes from 'prop-types';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image/withIEPolyfill';
 import { ClassNames } from '@emotion/core';
+import styled from '@emotion/styled';
 import tw from 'tailwind.macro';
+
+const StyledH1 = styled.h1`
+  ${tw`text-lg font-medium leading-relaxed my-3`}
+`;
 
 const Author = ({ location: { pathname } = {} }) => {
   const isRootPage = pathname === '/';
-  // eslint-disable-next-line  jsx-a11y/heading-has-content
-  const Heading = props => (isRootPage ? <h1 {...props} /> : <h2 {...props} />);
+
+  const Heading = props =>
+    // eslint-disable-next-line  jsx-a11y/heading-has-content
+    isRootPage ? <StyledH1 {...props} /> : <h2 {...props} />;
 
   const {
     site: {
