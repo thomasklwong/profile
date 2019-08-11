@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes, { shape } from 'prop-types';
 import { graphql } from 'gatsby';
+import styled from '@emotion/styled';
+import tw from 'tailwind.macro';
+
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 
@@ -15,13 +18,23 @@ export const query = graphql`
   }
 `;
 
+const StyledArticle = styled.article`
+  & h1 {
+    ${tw`text-4xl font-medium leading-loose	mb-8`}
+  }
+
+  & p {
+    ${tw`leading-relaxed mb-6`}
+  }
+`;
+
 export const IndexPageTemplate = ({
   content,
   contentComponent: PageContent = Content
 }) => (
-  <article>
+  <StyledArticle>
     <PageContent className="content" content={content} />
-  </article>
+  </StyledArticle>
 );
 
 IndexPageTemplate.propTypes = {
