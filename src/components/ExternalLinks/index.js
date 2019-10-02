@@ -49,12 +49,12 @@ const ExternalLinks = () => {
   return (
     <div>
       <StyledUL>
-        <ListItemAnchor Icon={Email} href={`mailto:${email}`} />
+        <ListItemAnchor href={`mailto:${email}`} Icon={Email} />
         <ListItemAnchor
-          Icon={Linkedin}
           href={`https://www.linkedin.com/in/${linkedin}`}
+          Icon={Linkedin}
         />
-        <ListItemAnchor Icon={Github} href={`https://github.com/${github}`} />
+        <ListItemAnchor href={`https://github.com/${github}`} Icon={Github} />
       </StyledUL>
     </div>
   );
