@@ -1,6 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import styled from '@emotion/styled';
+import tw from 'tailwind.macro';
+
+const StyledArticleContainer = tw.article`py-10 px-8`;
+const StyledArticle = tw.article`mb-8`;
+const StyledTitle = tw.h2`text-2xl leading-loose mb-3`;
+const StyledMeta = tw.section`text-sm uppercase`;
+const StyledDivider = tw.span`mx-1`;
+const StyledCategory = tw.span`leading-relaxed text-yellow-600`;
+const StyledExcerpt = tw.p`leading-relaxed my-4`;
+const StyledReadMore = styled(Link)`
+  ${tw`text-indigo-600 hover:underline focus:underline`}
+`;
 
 const BlogRoll = () => {
   const {
@@ -30,39 +43,39 @@ const BlogRoll = () => {
   `);
 
   return (
-    <div className="columns is-multiline">
-      {projects &&
-        projects.map(
-          ({
-            node: {
-              id,
-              fields: { slug },
-              frontmatter: { title, date },
-              excerpt
-            }
-          }) => (
-            <div className="is-parent column is-6" key={id}>
-              <article className="tile is-child box notification">
-                <p>
-                  <Link className="title has-text-primary is-size-4" to={slug}>
-                    {title}
-                  </Link>
-                  <span> &bull; </span>
-                  <span className="subtitle is-size-5 is-block">{date}</span>
-                </p>
-                <p>
-                  {excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
-              </article>
-            </div>
-          )
-        )}
-    </div>
+    <StyledArticleContainer>
+      {projects?.map(
+        ({
+          node: {
+            id,
+            fields: { slug },
+            frontmatter: { title, date },
+            excerpt
+          }
+        }) => (
+          <StyledArticle key={id}>
+            <header>
+              <StyledMeta>
+                {/* TODO: Extract proper datetime here */}
+                <time dateTime={Date.now()}>{date}</time>
+                <StyledDivider />
+                {/* TODO: Add Category/Tag */}
+                <StyledCategory>Category</StyledCategory>
+              </StyledMeta>
+              <StyledTitle>
+                <Link to={slug}>{title}</Link>
+              </StyledTitle>
+            </header>
+            <StyledExcerpt>{excerpt}</StyledExcerpt>
+            <nav>
+              <StyledReadMore className="button" to={slug}>
+                Keep Reading
+              </StyledReadMore>
+            </nav>
+          </StyledArticle>
+        )
+      )}
+    </StyledArticleContainer>
   );
 };
 

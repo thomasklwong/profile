@@ -5,9 +5,7 @@ import BlogRoll from '../../components/BlogRoll';
 
 const ProjectPage = ({ location }) => (
   <Layout location={location}>
-    <section>
-      <BlogRoll />
-    </section>
+    <BlogRoll />
   </Layout>
 );
 
